@@ -1,0 +1,50 @@
+<% layout("/layouts/alwayInclude") %>
+
+<main>
+    <section id="updates">   
+      <h2>📍Live Updates</h2>
+      <% if(currUser){ %>
+      <p id="location">Location: <%= weather.name %></p>
+      <p id="humidity">Humidity:<%= weather.main.humidity %>%</p>
+      <p id="temperature">Temperature: <%= ((weather.main.temp - 32)*5)/9 %>°C</p>
+      <p id="status">Status:<%= weather.weather[0].description %></p>
+      <% }else{ %>
+        <h1>Login First</h1>
+        <% } %>
+    </section>
+    <section id="controls">
+      <h2>⚙️Controls</h2>
+      <button onclick="refreshData()">Refresh Data</button>
+      <button onclick="locateUmbrella()">Find My Umbrella</button>
+    </section>
+
+    <section id="why" class="card fade-in">
+      <h2>FAQ's about Smart Umbrella</h2>
+      <details>
+        <summary><b>What is the Smart Umbrella, and how does it work?</b></summary>
+        <p>The Smart Umbrella is a technology-integrated umbrella designed to provide weather alerts, location tracking, and automation. It connects to the internet via Wi-Fi, Bluetooth, or GSM to send notifications and track its location. It also includes smart sensors to monitor environmental conditions. The umbrella enhances convenience by reminding users to carry it when rain is predicted.</p>
+      </details>
+      <details>
+        <summary><b>How does the Smart Umbrella notify me about the weather?</b></summary>
+        <p>The Smart Umbrella syncs with weather services to check daily forecasts. It sends alerts via email or a website, informing users if rain is expected. In the morning, it can provide a summary of the day's weather to help users plan accordingly. If rain is detected, it can also send real-time notifications to remind users to take the umbrella.</p>
+      </details>
+      <details>
+        <summary><b>Can I customize notifications and alerts?</b></summary>
+        <p>Yes, users can customize weather notifications, tracking alerts, and smart reminders based on their preferences. Through the website or app, they can adjust how often they receive updates. Alerts can be sent via email, app notifications, or SMS, depending on connectivity. Users can also enable or disable specific features based on their needs.</p>
+      </details>
+      <details>
+        <summary><b>What happens if the umbrella goes out of range?</b></summary>
+        <p>If the umbrella moves out of the connected device’s range, it saves the last known location using GPS and Wi-Fi. An alert is sent via Google Firebase, notifying the user of where it was last detected. This feature helps users track down their umbrella even if it's lost in a different location. Additionally, the umbrella reconnects automatically when back in range.</p>
+      </details>
+      <details>
+        <summary><b>Can I track my Smart Umbrella if I lose it?</b></summary>
+        <p>Yes, the umbrella includes a ‘Find My Umbrella’ feature for real-time location tracking. It uses GPS, Wi-Fi, and Bluetooth to determine its location and display it on a map via a website or mobile app. If the umbrella is misplaced nearby, Bluetooth tracking helps locate it precisely. For long distances, it shows the last known location before disconnection</p>
+      </details>
+      </section>
+      <section id="aboutus" class="card fade-in">
+        <h2>About us </h2>
+        <p>We are<b> UmbrellaIQ</b> , a passionate team of innovators dedicated to integrating smart technology into everyday essentials. Our Smart Umbrella is designed to provide real-time weather updates, location tracking, and automated features to enhance user convenience and safety.</p>
+        <p>This project is developed by <b>Ashwini Marathe</b>, <b>Kartik Kumbhar</b>, and <b>Raunak Mishra</b>, under the guidance of <b>Prof. Suvarna Patil</b> and <b>Dr. Atul Kathole</b>. We are 2nd-year Computer Engineering students at <b>Dr. D.Y. Patil Institute of Technology</b>, driven by a vision to create innovative and practical solutions through technology.</p>
+        <p>With a focus on IoT, AI, and sustainable energy, we aim to redefine how everyday objects interact with users. Our smart umbrella ensures that you stay informed, protected, and connected, no matter the weather.</p>
+      </section>
+  </main>
