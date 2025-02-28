@@ -1,4 +1,4 @@
-const { number } = require("joi");
+const { number, boolean } = require("joi");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const local = require("passport-local-mongoose");
@@ -14,7 +14,8 @@ const User = new Schema({
         require : true,
         unique: true,
         match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address.'],
-    }
+    },
+ 
 })
 
 

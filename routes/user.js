@@ -52,4 +52,10 @@ router.get("/logout",(req,res,next)=>{
         res.redirect("/Home");
     })
 })
+
+
+// router.get("/canSendMail", (req,res)=>{
+   
+//     res.send("hello ji");
+// })
 module.exports = router;

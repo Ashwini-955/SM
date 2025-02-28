@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const {getWeatherData} = require("../utils/getWeather.js");
-
+const {Users} = require("../models/users.js"); 
 router.get("/get-update",async(req,res)=>{
  try{
     const {weather,error} = await getWeatherData();
@@ -23,6 +23,7 @@ router.get("/get-update",async(req,res)=>{
   }
 });
 router.get("/",async(req,res)=>{
+
     if(req.isAuthenticated()){
         try{
             const { weather, error } = await getWeatherData();

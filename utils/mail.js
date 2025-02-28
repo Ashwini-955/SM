@@ -13,13 +13,13 @@ const transporter = nodemailer.createTransport({
 });
 
 
-const sendMail = async function main(userEmailS) {
+const sendMail = async function main(mailsArray) {
   const { weather, error } = await getWeatherData();
   const temp = ((weather.main.temp-32)*5)/9;
   if(weather){
       const mailOptions =   {
       from: '"Smart Umberella " <mishraraunak117@gmail.com>', 
-      to: "ashwinirm05@gmail.com", 
+      to: mailsArray.join(","), 
       subject: "Today'weather condition", 
       text: `Todays weather update : \n\nLocation : ${weather.name} \n Temprature : ${weather.main.temp}°F\nHumidity : ${weather.main.humidity}\ndescription : ${weather.weather[0].description}`, 
       html:         

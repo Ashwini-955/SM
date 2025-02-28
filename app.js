@@ -20,8 +20,13 @@ const {sendMailOnTime} = require("./middleware.js");
 const schedule = require('node-schedule');
 const sendMail = require("./utils/mail");
 
-const job = schedule.scheduleJob('46 11 * * *', async() => {
-     await sendMail();
+const job = schedule.scheduleJob('0 8 * * *', async() => {
+
+    const mails = await Users.find({},"email");
+    const mailsArray = mails.map(user => user.email);
+
+    
+     await sendMail(mailsArray);
 });
 
 job;
