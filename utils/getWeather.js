@@ -1,4 +1,4 @@
-const city = 'Pimpri';
+const city = 'Katraj';
 const key = process.env.API_KEY;
 const url =  `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`
 const axious = require("axios");
