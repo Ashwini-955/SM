@@ -20,8 +20,8 @@ function refreshData() {
   function locateUmbrella() {
     alert('Opening map to locate umbrella...');
     
-    let latitude = 18.62316;  // Example Latitude
-    let longitude = 73.81582; // Example Longitude
+    let latitude = 18.552778;  // Example Latitude
+    let longitude = 73.823168; // Example Longitude
     
     let url = `https://www.google.com/maps?q=${latitude},${longitude}`;
     window.open(url, '_blank');
